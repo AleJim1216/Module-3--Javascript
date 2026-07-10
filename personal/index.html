@@ -15,7 +15,7 @@
     </header>
     <hr class="header-separator">
     <nav>
-        <ul>
+        <ul id="nav-list">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="./contact.html">Contact</a></li>
@@ -32,32 +32,27 @@
                 <p>My goal for this summer is to sharpen my full-stack experience whilst learning emerging concepts like deep learning.</p>
             </div>
         </aside>
-        <hr>
+        <hr id="body-separator">
         <article id = "projects">
             <h2>Projects!</h2>
             <div id="parent-cards">
-                <a href="https://github.com/daviddgonzalez/MyPose" title="Click to be redirected to Github" class="project-links">
-                    <section>
-                        <h3>MyPose</h3>
-                        <p class="project-desc">Developed a full-stack computer vision application that learns a user’s biomechanics and evaluates exercise form
-                        in real time, leveraging machine learning to flag joint deviations and improve movement quality.</p>
-                        <img src="../images/My Pose.png" width="300px" height="250px"/>
-                        <p><time datetime="2026-01"> January 2026 </time></p>
-                    </section>
-                </a>
-                <a href="https://github.com/SivanRP/ParallelMe" title="Click to be redirected to Github" class="project-links">
-                    <section>
-                        <h3>ParallelMe</h3>
-                            <p class="project-desc">Built a decision engine with a team using Next.JS that simulates two parallel futures for any user decision.</p>
-                            <img src="../images/ParallelMe.png" width="300px" height="250px"/>
-                            <p><time datetime="2026-03"> March 2026 </time></p>
-                    </section>
-                </a>
             </div>
+            <dialog id="card-dialog">
+                <div id="dialog-header">
+                    <button id="dialog-close">X</button>
+                    <a id="github-link" href="">
+                        <button id="link-button">Click here to view the repo!</button>
+                    </a>
+                </div>
+                <img id="dialog-img" width = "500vw" height = "300px">
+            </dialog>
         </article>
     </main>
     <footer>
             <p>Created by Alejandro Jimenez for SEC</p>
     </footer>
+    <div id="overlay-div"></div>
+    <script src="theme.js"></script>
+    <script src="projects.js"></script>
 </body>
 </html>

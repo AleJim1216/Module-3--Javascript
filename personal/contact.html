@@ -7,6 +7,7 @@
     <meta name="description" content="Well-rounded portfolio about myself">
     <link rel="icon" href="images/Happy Face.jpeg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
     <title>Contact Page</title>
 </head>
 <body id="contact-body">
@@ -41,8 +42,23 @@
             </tfoot>
         </table>
     </address>
+    <form id="contact-form">
+        
+            <label for="name">Name:</label>
+            <input type="text" name="name" required>
+       
+            <label for="email">Email</label>
+            <input type="text" name="email" required>
+       
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" placeholder="Send me a message!" rows="5" cols="30" required></textarea>
+       
+        <button id="contact-submit">Submit</button>
+    </form>
     <footer>
          <p>Created by Alejandro Jimenez for SEC</p>
     </footer>
+    <script src="theme.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html>

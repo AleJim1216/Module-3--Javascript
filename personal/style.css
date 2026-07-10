@@ -1,14 +1,16 @@
+@import 'variables.css';
+
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Share+Tech&display=swap');
 html, body {
     margin: 0;
     padding: 0;
 }
 html{
-  background-image: linear-gradient(to bottom, rgb(205, 152, 195), rgb(0, 0, 0));
-  color: white;
+  background-image: linear-gradient(to bottom, var(--html-to) var(--html-to-gradient), var(--html-bottom) var(--html-bottom-gradient));
+  color: var(--text-color);
   min-height: 100vh;
 }
-body{
+body > *{
     font-family: "Share Tech", sans-serif;
 }
 header {
@@ -16,44 +18,58 @@ header {
     justify-content: center;
     align-items: center;
     font-style: italic;
-    background-image: url("../images/Stars.jpg");
+    background-image: var(--header-image);
     height: 200px;
     margin-bottom: 0;
     width: 100vw;
 }
 header > h1 {
-    color: white;
+    color: var(--text-color);
     font-size: 4em;
 }
 .header-separator{
     margin: 0;
     width: 100vw;
+    color: var(--line-color);
+    /*position: sticky;*/
+}
+#body-separator{
+    color: var(--line-color);
 }
 nav {
     margin-top: -1.5em;
     border: 1px solid transparent;
     position: sticky;
-    z-index: 1;
+    z-index: 1000;
     top: 0;
 }
-nav > ul{
+#nav-list{
     display: flex;
+    /*justify-content:;*/
     justify-content: space-evenly;
     list-style-type: none;
+    margin-top: 0.7em;
     /* margin: ; */
     & li a {
-        border: 3px solid gray;
+        font-size: 20px;
+        color: var(--text-color);
+        border: 1px solid var(--button-border);
         text-decoration: none;
-        background-image: radial-gradient(circle, white 0%, gray 100%);
+        background-image: var(--button-color);
         border-radius: 15px;
-        padding: 1em 3em;
-        background-color: rgb(255, 255, 255);
+        background-origin: border-box;
+        padding: 0.8rem 3rem;
     }
     & li a:active{
         box-shadow: inset 3px 3px 10px black;
     }
     & li a:hover{
-        background-image: radial-gradient(circle, rgba(216, 231, 56, 0.362) 100%, white 100%);
+        background-color:var(--hover);
+        color: var(--hover-color);
+        background-image: none;
+    }
+    & li a:visited{
+        color: var(--visited-color);
     }
     
 }
@@ -84,134 +100,134 @@ main{
 #about-info :first-child {
     margin-top: 25%;
 }
-#projects, #parent-cards, .project-links {
+#projects, .project-cards, section {
     display: flex;
     flex-flow: column;
     align-items: center;
 }
 #projects {
-    /* border: 1px solid wheat; */
-    padding: 0 0;
-    height: 1300px
+    padding: 0 0;    
+    min-height: auto;   
 }
 #parent-cards {
-    margin: 10%;
+    display: grid;
+    justify-content: center;
+    align-content:center;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 600px));
+    width: 90%;
     padding-top: 0;
-    gap: 3em;
+    gap: 2em;
+    height: 100%;
 }
+
 .project-links{
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     font-family: "EB Garamond", serif;
     border-radius: 10px;
-    background: firebrick;
+    background: var(--card-color);
     box-shadow: 5px 5px 10px black;
     /* -3px -3px 10px rgba(255, 255, 255); */
-    max-width: 450px;
+    /*max-width: 450px;*/
+    height: 500px;
     border: 1px solid white;
     text-align: center;
     transition: transform 0.2s ease;
 }
 .project-links:hover{
     transform: translateY(-10px); 
-    background-image: radial-gradient(circle, rgb(242, 247, 194) 100%, white 100%);
+    background-image: none;
+    background-color: var(--card-hover);
     color: black;
 }
-.project-links:active{
-    transform: translateY(-10px); 
+section{
+    height: 500px;
 }
 section > h3 {
     font-size: 150%;
 }
 .project-desc {
-    margin: -10px auto 20px;
+    /*margin;*/
     border: 1px solid transparent;
     width: 90%;
     text-align: center;
 }
 section > img {
     border: 2px solid rgb(0 0 0 / 0.4);
-}
-img {
     border-radius: 10px;
+    margin-top: 10px;
+}
+section img + p{
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+#card-dialog {
+    background-color: var(--card-color);
+    border: 1px solid white;
+    &, & > * {
+        border-radius: 15px;
+    }
+}
+#dialog-header{
+    --button-width: 30px;
+    display: flex;
+    /*column-gap: 20px;*/
+    /*grid-template-columns:  var(--button-width) auto;*/
+    align-items: center;
+    margin-bottom: 10px;
+}
+#dialog-close {
+    width: var(--button-width);
+    height: 20px;
+    justify-self: start;
+    margin-right: 10px;
+}
+#github-link , #github-link button{
+    margin: auto;
+    width: 100%
+}
+.transparent-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
 }
 footer {
     margin-left: 20px;
 }
-#home-link a {
-    --s: 175px;
-    display: grid;
-    border: 1px solid white;
-    width: calc(var(--s));
-    height: calc(var(--s) / 2);
-    place-items:center;
-    background-image: radial-gradient(circle, white 0%, gray 100%);
-    border: 3px solid gray;
-    text-decoration: none;
+#theme-button {
+    background-image: var(--button-color);
+    color: var(--text-color);
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    z-index: 999;
+    width: 100px;
+    height: 30px;
+    border: 1px solid var(--button-border);
+    background-origin: border-box;
     border-radius: 15px;
-    font-size: 2rem;
-    margin-top: -65px;
+    &:hover {
+        background-color: var(--hover);
+        background-image: none;
+    }
 }
-#home-link a:active{
-    box-shadow: inset 3px 3px 10px black;
+#scroll-button{
+    position: sticky;
+    bottom: 1em;
+    margin-left: auto;
+    right: 1em;
+    width: 8em;
+    height: 5em;
+    background-image: var(--button-color);
+    color: var(--text-color);
+    border-radius: 15px;
+    font-size: 1.2em;
 }
-#home-link a:hover{
-    background-image: radial-gradient(circle, rgb(242, 247, 194) 100%, white 100%);
-}
-#contact-body{
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    overflow:auto;
-}
-#contact-body footer {
-    margin-top: auto;
-    align-self: flex-start;
-}
-#contact-header{
-    width: 100dvw;
-}
-table, th, td {
-    border: 1px solid white;
-}
-table {
-    height: 300px;
-    margin: 0 auto;
-    margin-top: 100px;
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 30px;
-    overflow: hidden;
-    font-style: normal;
-    text-align: center;
-}
-th, td {
-    padding: 1em 2em;
-}
-thead{
-    background-color: rgba(134, 195, 230, 0.895);
-}
-thead th, td {
-    color: white;
-}
-tbody, tfoot{
-    color: black;
-    background-color: rgb(207, 204, 204);
-}
-th {
-    color: black;
-}
-#contact-line{
-    border: none;
-    border-top: 2px solid white;
-    margin: 0;
-    color:white;
-    width: 90vw;
-
-}
-@media (max-width: 500px){
+@media (max-width: 750px){
     main{
         display: block;
     }

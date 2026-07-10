@@ -1,0 +1,40 @@
+:root[data-theme="Light"] {
+    --text-color: #222;
+    --line-color: #222;
+    --header-image: url("../images/Sky.jpg");
+    --html-to:    #648ebe;
+    --html-to-gradient: 30%;
+    --html-bottom: #005B98;
+    --html-bottom-gradient: 70%;
+    --button-border: gray;
+    --button-outer: gray;
+    --button-inner: white;
+    --button-color: linear-gradient(to right bottom, var(--button-inner) 0%, var(--button-outer) 100%);
+    --card-color: #D2DBEC;  
+    --card-hover: white;
+    --table-head-color: #BECDE4;
+    --table-body-color: #eee;
+    --hover: white;
+    --visited-color: purple;
+}
+
+:root[data-theme="Dark"] {
+    --text-color: white;
+    --line-color: #222;
+    --header-image: url("../images/Galaxy.jpg");
+    --html-to:#4E3473;
+    --html-to-gradient: 0%;
+    --html-bottom: #1a021f;
+    --html-bottom-gradient: 100%;
+    --button-border: gray;
+    --button-outer: black;
+    --button-inner: gray;
+    --button-color: linear-gradient(to right bottom, var(--button-inner) 0%, var(--button-outer) 100%);
+    --card-color: #9163BF;  
+    --card-hover: #f2e4f7;
+    --table-head-color: #003c63;
+    --table-body-color: #C1BFC4;
+    --hover: gray;
+    --hover-color: black;
+    --visited-color: #9163BF;
+}
